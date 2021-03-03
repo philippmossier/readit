@@ -22,6 +22,9 @@ CREATE DATABASE readit
 npm install express
 npm install -D @types/express morgan @types/morgan
 npm install -D nodemon
+npm i jsonwebtoken cookie cookie-parser
+npm i -D @types/jsonwebtoken @types/cookie @types/cookie-parser
+npm i dotenv
 
 ## package.json
 
@@ -33,3 +36,7 @@ npm install -D nodemon
 
 imp tab (import module)
 dob tab (descrutured object)
+tryc tab (trycatch block)
+nfn tab (named function)
+
+ctrl + . (immport all missing modules)
