@@ -1,4 +1,6 @@
-# Awesome Project Build with TypeORM
+# Currently WIP
+
+## Awesome Project Build with TypeORM
 
 Steps to run this project:
 
