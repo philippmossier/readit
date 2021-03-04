@@ -1,4 +1,4 @@
-# Currently WIP
+# [WIP]
 
 ## Awesome Project Build with TypeORM
 
