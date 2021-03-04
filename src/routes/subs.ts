@@ -18,7 +18,7 @@ const createSub = async (req: Request, res: Response) => {
 
     const sub = await getRepository(Sub)
       .createQueryBuilder('sub')
-      .where('sub.name = :name', { name: name.toLowerCase() })
+      .where('lower(sub.name) = :name', { name: name.toLowerCase() })
       .getOne();
 
     if (sub) errors.name = 'Sub exists already';
@@ -37,7 +37,7 @@ const createSub = async (req: Request, res: Response) => {
     return res.json(sub);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: 'Something went wrong' });
+    return res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
