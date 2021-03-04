@@ -40,3 +40,11 @@ tryc tab (trycatch block)
 nfn tab (named function)
 
 ctrl + . (immport all missing modules)
+
+## typeorm cli
+
+typeorm entity:create --name Post
+
+npm run typeorm schema:drop
+npm run typeorm migration:generate -- --name create-users-table
+npm run typeorm migration:run
