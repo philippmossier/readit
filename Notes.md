@@ -25,6 +25,7 @@ npm install -D nodemon
 npm i jsonwebtoken cookie cookie-parser
 npm i -D @types/jsonwebtoken @types/cookie @types/cookie-parser
 npm i dotenv
+npm i class-transformer class-validator
 
 ## package.json
 
@@ -48,3 +49,11 @@ typeorm entity:create --name Post
 npm run typeorm schema:drop
 npm run typeorm migration:generate -- --name create-users-table
 npm run typeorm migration:run
+npm run typeorm migration:revert
+
+## shell client
+
+npx create-next-app client
+npm install --save-dev @types/react typescript
+// create empty tsconfig.json and restart app
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
