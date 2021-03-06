@@ -33,13 +33,17 @@ npm i class-transformer class-validator
       "dev": "nodemon --exec ts-node src/server.ts"
 ```
 
-## usefull snippets
+## snippets & hotkeys
 
+*snippets:*
 imp tab (import module)
 dob tab (descrutured object)
 tryc tab (trycatch block)
 nfn tab (named function)
+clg (console.log(bla))
+useState
 
+*vscode hotkeys:*
 ctrl + . (immport all missing modules)
 
 ## typeorm cli
