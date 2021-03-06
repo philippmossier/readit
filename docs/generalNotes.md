@@ -45,6 +45,7 @@ useState
 
 *vscode hotkeys:*
 ctrl + . (immport all missing modules)
+ctrl + / (jsx comments)
 
 ## typeorm cli
 
@@ -61,3 +62,4 @@ npx create-next-app client
 npm install --save-dev @types/react typescript
 // create empty tsconfig.json and restart app
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npm i -D @svgr/webpack

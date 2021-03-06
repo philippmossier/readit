@@ -4,10 +4,8 @@ export default function Home() {
   return (
     <div className="flex">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Readit: the front page to the internet</title>
       </Head>
-      <h1>Welcome to index page</h1>
     </div>
   );
 }
