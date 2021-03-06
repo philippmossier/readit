@@ -1,22 +1,23 @@
+# Switch from CSR to SSR just by a few lines at the bottom
+
+```tsx
 import Axios from 'axios';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { Post } from '../types';
+import { GetServerSideProps } from 'next';
 
 dayjs.extend(relativeTime);
 
-export default function Home() {
-  const [posts, setPosts] = useState<Post[]>([]);
-  useEffect(() => {
-    Axios.get('/posts')
-      .then((res) => setPosts(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+type Data = {
+  posts: Post[];
+};
 
+export default function Home({ posts }: Data) {
   return (
     <div className="pt-12">
       <Head>
@@ -90,8 +91,19 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Aside Content */}
+        {/* Sidebar */}
       </div>
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  try {
+    const res = await Axios.get('/posts');
+
+    return { props: { posts: res.data } };
+  } catch (err) {
+    return { props: { error: 'Something went wrong' } };
+  }
+};
+```

@@ -1,3 +1,8 @@
+# 2 ways to add virtual fields to an entity
+
+You can use @Expose or @Afterload
+
+```ts
 import {
   AfterLoad,
   BeforeInsert,
@@ -54,9 +59,18 @@ export default class Post extends Entity {
   @OneToMany(() => Comment, (comment) => comment.post)
   comments: Comment[];
 
+ // ----------- WAY 1 -------------------------
   @Expose() get url(): string {
     return `/r/${this.subName}/${this.identifier}/${this.slug}`;
   }
+
+ // ----------- WAY 2 -------------------------
+  protected url: string
+  @AfterLoad()
+  createField(){
+    this.url = `/r/${this.subName}/${this.identifier}/${this.slug}`
+  }
+ // ----------------------------------------------
 
   @BeforeInsert()
   makeIdAndSlug() {
@@ -64,3 +78,4 @@ export default class Post extends Entity {
     this.slug = slugify(this.title);
   }
 }
+```

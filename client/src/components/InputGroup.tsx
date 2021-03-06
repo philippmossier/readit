@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 
-interface InputGroupProps {
+type InputGroupProps = {
   className?: string;
   type: string;
   placeholder: string;
   value: string;
   error: string | undefined;
   setValue: (str: string) => void;
-}
+};
 
 const InputGroup: React.FC<InputGroupProps> = ({
   className,
@@ -34,7 +34,3 @@ const InputGroup: React.FC<InputGroupProps> = ({
   );
 };
 export default InputGroup;
-// className={classNames(
-// 	'w-full p-3 transition duration-200 border border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white',
-// 	{ 'border-red-500': error }
-// )}
