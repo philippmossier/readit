@@ -10,7 +10,7 @@ Axios.defaults.withCredentials = true;
 
 function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
-  const authRoutes = ['/register', '/login'];
+  const authRoutes = ['/register', '/login', '/testpage'];
   const authRoute = authRoutes.includes(pathname);
   return (
     <Fragment>
