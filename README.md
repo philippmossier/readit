@@ -29,3 +29,10 @@ npm run dev
 cd client
 npm run dev
 ```
+
+### OFTEN USED COMMANDS
+
+```bash
+npm run typeorm migration:generate -- --name create-votes-table
+npm run typeorm migration:run
+```
