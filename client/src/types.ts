@@ -9,4 +9,7 @@ export type Post = {
   updatedAt: string;
   // Virtual fields
   url: string;
+  voteScore?: number;
+  commentCount?: number;
+  userVote?: number;
 };

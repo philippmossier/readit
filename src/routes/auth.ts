@@ -6,6 +6,7 @@ import cookie from 'cookie';
 
 import User from '../entities/User';
 import auth from '../middlewares/auth';
+import user from '../middlewares/user';
 
 const mapErrors = (errors: Object[]) => {
   // more info in docs
@@ -111,7 +112,7 @@ const logout = async (_: Request, res: Response) => {
 const router = Router();
 router.post('/register', register);
 router.post('/login', login);
-router.get('/me', auth, me);
-router.get('/logout', auth, logout);
+router.get('/me', user, auth, me);
+router.get('/logout', user, auth, logout);
 
 export default router;

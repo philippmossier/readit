@@ -3,8 +3,10 @@ import { isEmpty } from 'class-validator';
 import { getRepository } from 'typeorm';
 
 import User from '../entities/User';
-import auth from '../middlewares/auth';
 import Sub from '../entities/Sub';
+
+import auth from '../middlewares/auth';
+import user from '../middlewares/user';
 
 const createSub = async (req: Request, res: Response) => {
   const { name, title, description } = req.body;
@@ -43,6 +45,6 @@ const createSub = async (req: Request, res: Response) => {
 
 const router = Router();
 
-router.post('/', auth, createSub);
+router.post('/', user, auth, createSub);
 
 export default router;
