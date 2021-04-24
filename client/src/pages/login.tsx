@@ -4,22 +4,29 @@ import Link from 'next/link';
 import Axios from 'axios';
 import InputGroup from '../components/InputGroup';
 import { useRouter } from 'next/router';
+import { useAuthDispatch, useAuthState } from '../context/auth';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<any>({});
 
+  const disptach = useAuthDispatch();
+  const { authenticated } = useAuthState();
   const router = useRouter();
+
+  if (authenticated) router.push('/');
 
   const submitForm = async (event: FormEvent) => {
     event.preventDefault(); // to prevent reloading after submit
 
     try {
-      await Axios.post('/auth/login', {
+      const res = await Axios.post('/auth/login', {
         username,
         password,
       });
+
+      disptach('LOGIN', res.data);
 
       router.push('/');
     } catch (err) {

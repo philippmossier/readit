@@ -13,3 +13,10 @@ export type Post = {
   commentCount?: number;
   userVote?: number;
 };
+
+export type User = {
+  username: string;
+  email: string;
+  createdAt: string;
+  updatedAt: string;
+};
