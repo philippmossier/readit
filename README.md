@@ -1,6 +1,4 @@
-# [WIP]
-
-## Awesome Project Build with TypeORM
+# Reddit Clone - nodejs Rest API & React Frontend [WIP]
 
 Steps to run this project:
 
@@ -8,7 +6,7 @@ Steps to run this project:
 2. Setup database settings inside `ormconfig.json` file
 3. Run `npm start` command
 
-## --------------------- Daily dev setup ------------------------
+## --------------------- Daily dev setup (docker setup WIP) ------------------------
 
 ### Database Window
 
